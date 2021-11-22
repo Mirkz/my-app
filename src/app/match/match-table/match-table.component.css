@@ -1,12 +1,11 @@
-.update-timer {
+.header {
     margin-bottom: 1em;
-    text-align: center;
 }
 
 .title {
     background-color: black;
     color: white;
-    font-size: xx-large;
+    font-size: large;
     width: 100%;
     text-align: center;
 }
@@ -16,22 +15,18 @@ table {
     border-spacing: 0;
     border: 1px solid black;
     text-align: center;
-    margin-bottom: 1em;
+    font-size: small;
 }
 
 thead {
-    font-size: x-large;
+    font-size: medium;
 }
 
 td {
     border: 1px solid black;
-    width: 20%;
-}
-
-.narrow-column {
     width: 10%;
 }
 
-.footer {
-    text-align: center;
+.teams-column {
+    width: 50%;
 }

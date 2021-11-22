@@ -1,32 +1,30 @@
-<div class="update-timer">updating in {{updateTimer}} seconds...</div>
+<div class="header">
+    <button>new record</button> updating in {{updateTimer}} seconds...
+</div>
 
 <div class="title">MATCHES</div>
 
 <table>
     <thead>
-        <td class="narrow-column">ID</td>
-        <td>TEAMS</td>
+        <td>ID</td>
+        <td class="teams-column">TEAMS</td>
         <td>DATE</td>
         <td>TIME</td>
         <td>RESULT</td>
-        <td class="narrow-column">ACTIONS</td>
+        <td>ACTIONS</td>
     </thead>
     <tbody>
         <ng-container *ngFor="let record of datasource">
             <tr>
-                <td class="narrow-column">{{record.id}}</td>
-                <td>{{record.homeTeam | uppercase}} vs {{record.awayTeam | uppercase}}</td>
+                <td>{{record.id}}</td>
+                <td class="teams-column">{{record.homeTeam | uppercase}} vs {{record.awayTeam | uppercase}}</td>
                 <td>{{record.date}}</td>
                 <td>{{record.time}}</td>
                 <td>{{record.homeGoals}} - {{record.awayGoals}}</td>
-                <td class="narrow-column">
+                <td>
                     <button>remove</button>
                 </td>
             </tr>
         </ng-container>
     </tbody>
 </table>
-
-<div class="footer">
-    <button>new record</button>
-</div>
