@@ -8,7 +8,7 @@ import { MatchService } from '../match.service';
 })
 export class MatchTableComponent implements OnInit {
 
-  public datasource: any = undefined;
+  public datasource: any = [];
 
 
   constructor(private matchService: MatchService) { }
@@ -26,6 +26,11 @@ export class MatchTableComponent implements OnInit {
         error: e => console.error(e)
       }
     );
+  }
+
+
+  removeRecord(id: number) {
+    this.datasource = this.datasource.filter((record: any) => id !== record.id);
   }
 
 

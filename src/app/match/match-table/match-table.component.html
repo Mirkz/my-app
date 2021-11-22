@@ -22,7 +22,7 @@
                 <td>{{record.time}}</td>
                 <td>{{record.homeGoals}} - {{record.awayGoals}}</td>
                 <td>
-                    <button>remove</button>
+                    <button (click)="removeRecord(record.id)">remove</button>
                 </td>
             </tr>
         </ng-container>
