@@ -1,4 +1,6 @@
-<div class="title">THE MATCH TABLE</div>
+<div class="update-timer">updating in {{updateTimer}} seconds...</div>
+
+<div class="title">MATCHES</div>
 
 <table>
     <thead>
@@ -10,23 +12,13 @@
         <td class="narrow-column">ACTIONS</td>
     </thead>
     <tbody>
-        <tr>
-            <td class="narrow-column">id</td>
-            <td>teams</td>
-            <td>date</td>
-            <td>time</td>
-            <td>result</td>
-            <td class="narrow-column">
-                <button>remove</button>
-            </td>
-        </tr>
-        <ng-container *ngFor="let i of [1,2,3]">
-            <tr class="new-record">
-                <td class="narrow-column">id</td>
-                <td>teams</td>
-                <td>date</td>
-                <td>time</td>
-                <td>result</td>
+        <ng-container *ngFor="let record of datasource">
+            <tr>
+                <td class="narrow-column">{{record.id}}</td>
+                <td>{{record.homeTeam | uppercase}} vs {{record.awayTeam | uppercase}}</td>
+                <td>{{record.date}}</td>
+                <td>{{record.time}}</td>
+                <td>{{record.homeGoals}} - {{record.awayGoals}}</td>
                 <td class="narrow-column">
                     <button>remove</button>
                 </td>
