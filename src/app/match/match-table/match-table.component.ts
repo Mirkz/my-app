@@ -1,6 +1,18 @@
 import { Component, OnInit } from '@angular/core';
 import { MatchService } from '../match.service';
 
+
+export interface Record {
+  id: number,
+  homeTeam: string,
+  awayTeam: string,
+  date: string,
+  time: string,
+  homeGoals: number,
+  awayGoals: number
+}
+
+
 @Component({
   selector: 'app-match-table',
   templateUrl: './match-table.component.html',
@@ -8,7 +20,7 @@ import { MatchService } from '../match.service';
 })
 export class MatchTableComponent implements OnInit {
 
-  public datasource: any = [];
+  public datasource: Record[] = [];
 
 
   constructor(private matchService: MatchService) { }
@@ -19,7 +31,7 @@ export class MatchTableComponent implements OnInit {
   }
 
 
-  private retrieveData() {
+  private retrieveData(): void {
     this.matchService.getData().subscribe(
       {
         next: resp => this.datasource = resp,
@@ -29,12 +41,12 @@ export class MatchTableComponent implements OnInit {
   }
 
 
-  removeRecord(id: number) {
+  removeRecord(id: number): void {
     this.datasource = this.datasource.filter((record: any) => id !== record.id);
   }
 
 
-  addNewRecord() {
+  addNewRecord(): void {
 
   }
 
