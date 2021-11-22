@@ -1,1 +1,40 @@
-<p>match-table works!</p>
+<div class="title">THE MATCH TABLE</div>
+
+<table>
+    <thead>
+        <td class="narrow-column">ID</td>
+        <td>TEAMS</td>
+        <td>DATE</td>
+        <td>TIME</td>
+        <td>RESULT</td>
+        <td class="narrow-column">ACTIONS</td>
+    </thead>
+    <tbody>
+        <tr>
+            <td class="narrow-column">id</td>
+            <td>teams</td>
+            <td>date</td>
+            <td>time</td>
+            <td>result</td>
+            <td class="narrow-column">
+                <button>remove</button>
+            </td>
+        </tr>
+        <ng-container *ngFor="let i of [1,2,3]">
+            <tr class="new-record">
+                <td class="narrow-column">id</td>
+                <td>teams</td>
+                <td>date</td>
+                <td>time</td>
+                <td>result</td>
+                <td class="narrow-column">
+                    <button>remove</button>
+                </td>
+            </tr>
+        </ng-container>
+    </tbody>
+</table>
+
+<div class="footer">
+    <button>new record</button>
+</div>
